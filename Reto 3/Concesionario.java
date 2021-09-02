@@ -43,28 +43,11 @@ public class Concesionario {
         double a;
         //a=empleado.calcularMiNomina(empleado);  //Pago mensual del empleado (Salario + comisiones)
         a=empleado.getSalario()/30;
-        //System.out.println("el salario base es "+a);
-//        LocalDate ingreso1 = LocalDate.parse(ingreso, DateTimeFormatter.ofPattern("dd/M/yyyy") );
-//        LocalDate retiro1 = LocalDate.parse(retiro, DateTimeFormatter.ofPattern("dd/M/yyyy") );
+
         int difM=0;
         
         int dif_fechas=(int)ChronoUnit.DAYS.between(LocalDate.parse(ingreso), LocalDate.parse(retiro))-5;
-            //System.out.println("Dif_fechas: " + dif_fechas);
-//        try{   //Calculo de los meses entre las dos fechas
-//            Calendar inicio = new GregorianCalendar();
-//            Calendar fin = new GregorianCalendar();
-//            inicio.setTime(new SimpleDateFormat("yyyy-MM-dd").parse(ingreso));
-//            fin.setTime(new SimpleDateFormat("yyyy-MM-dd").parse(retiro));
-//            int difA = fin.get(Calendar.YEAR) - inicio.get(Calendar.YEAR);
-//            difM = difA * 12 + fin.get(Calendar.MONTH) - inicio.get(Calendar.MONTH)+1;
-////            System.out.println("Fin: " +fin.get(Calendar.MONTH));
-////            System.out.println("Inicio: " + inicio.get(Calendar.MONTH));
-////            System.out.println(difM);
-////            System.out.println("Nomina: " + a);
-//        }catch(ParseException ex) {
-//
-//        }  
-        
+      
         
         //Lectura del Arraylist de los autos
         double salida=0;
@@ -124,10 +107,6 @@ public class Concesionario {
         }
         
         double pagos=(a*dif_fechas)+salida;
-        
-//        if (i==2) {
-//            pagos=2.44375E7;
-//        }
                 
         return pagos;
     }
@@ -135,7 +114,6 @@ public class Concesionario {
     public static double calcularDeducciones(Empleado empleado, String ingreso, String retiro){
 
         double p;
-        //System.out.println("Coco" +empleado.calcularMiNomina(empleado));
         p=empleado.getSalario(); //Salario base sin Deducciones mensuales del empleado (seguridad social)
         //System.out.println("Nomina 1: " + p);
         int difM=0;
